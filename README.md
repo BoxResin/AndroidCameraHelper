@@ -30,7 +30,7 @@ android {
 dependencies {
     ...
     // 추가
-    implementation 'boxresin.android.camera:cameraview:0.1.0'
+    implementation 'boxresin.android.camera:cameraview:0.1.1'
     ...
 }
 ```
