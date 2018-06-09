@@ -21,7 +21,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // 로컬 모듈
-    implementation project(':lib')
+    implementation project(':cameraview')
 
     // 코틀린
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
