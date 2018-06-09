@@ -4,11 +4,15 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://dl.bintray.com/boxresin/maven' }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0-alpha17'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // Bintray 업로더
+        classpath 'boxresin.gradle.plugin:bintray-uploader:1.0.0'
     }
 }
 

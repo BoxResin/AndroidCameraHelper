@@ -4,6 +4,9 @@
 	xmlns:android = "http://schemas.android.com/apk/res/android"
 	xmlns:tools = "http://schemas.android.com/tools">
 
+	<!-- 사용 권한 -->
+	<uses-permission android:name = "android.permission.CAMERA"/>
+
 	<application
 		android:allowBackup = "false"
 		android:icon = "@mipmap/ic_launcher"
@@ -11,5 +14,14 @@
 		android:roundIcon = "@mipmap/ic_launcher_round"
 		android:supportsRtl = "false"
 		android:theme = "@style/AppTheme"
-		tools:ignore = "GoogleAppIndexingWarning"/>
+		tools:ignore = "GoogleAppIndexingWarning">
+
+		<!-- 메인 액티비티 -->
+		<activity android:name = ".MainActivity">
+			<intent-filter>
+				<action android:name = "android.intent.action.MAIN"/>
+				<category android:name = "android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+	</application>
 </manifest>

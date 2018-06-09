@@ -1,0 +1,14 @@
+<!-- 메인 액티비티 레이아웃 -->
+<androidx.constraintlayout.ConstraintLayout
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent"
+	tools:context = ".MainActivity">
+
+	<!-- 카메라 뷰 -->
+	<boxresin.android.camera.CameraView
+		android:id = "@+id/camera_view"
+		android:layout_width = "match_parent"
+		android:layout_height = "match_parent"/>
+</androidx.constraintlayout.ConstraintLayout>
