@@ -1,4 +1,4 @@
-package boxresin.lib.android.camera
+package boxresin.android.camera
 
 import android.Manifest
 import android.content.Context
