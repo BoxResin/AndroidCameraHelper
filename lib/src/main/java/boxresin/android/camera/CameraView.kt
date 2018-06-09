@@ -16,17 +16,10 @@ import android.view.WindowManager
  * @author Minsuk Eom
  * @since v0.1.0
  */
-class CameraView(context: Context, attrs: AttributeSet? = null) : SurfaceView(context, attrs),
-        SurfaceHolder.Callback
+class CameraView(context: Context, attrs: AttributeSet? = null) : SurfaceView(context, attrs)
 {
     private var camera: Camera? = null
 
-
-    init
-    {
-        // 카메라 미리보기를 띄울 표면 홀더에 콜백 설정
-        holder.addCallback(this)
-    }
 
     /**
      * 카메라를 열고, 카메라 뷰에 미리보기를 띄운다.
@@ -69,23 +62,32 @@ class CameraView(context: Context, attrs: AttributeSet? = null) : SurfaceView(co
         camera = null
     }
 
-    /**
-     * 카메라 미리보기를 띄울 표면이 생성되었을 때 호출된다.
-     */
-    override fun surfaceCreated(holder: SurfaceHolder)
-    {
-        // 카메라 미리보기를 띄울 표면 홀더를 설정한다.
-        camera?.setPreviewDisplay(holder)
-    }
 
-    /**
-     * 카메라 미리보기를 띄울 표면이 제거되었을 때 호출된다.
-     */
-    override fun surfaceDestroyed(holder: SurfaceHolder)
+    init
     {
-        // 카메라 미리보기를 띄울 표면 홀더를 제거한다.
-        camera?.setPreviewDisplay(null)
-    }
+        // 카메라 미리보기를 띄울 표면 홀더에 콜백 설정
+        holder.addCallback(object: SurfaceHolder.Callback
+        {
+            /**
+             * 카메라 미리보기를 띄울 표면이 생성되었을 때 호출된다.
+             */
+            override fun surfaceCreated(holder: SurfaceHolder)
+            {
+                // 카메라 미리보기를 띄울 표면 홀더를 설정한다.
+                camera?.setPreviewDisplay(holder)
+            }
 
-    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
+            /**
+             * 카메라 미리보기를 띄울 표면이 제거되었을 때 호출된다.
+             */
+            override fun surfaceDestroyed(holder: SurfaceHolder)
+            {
+                // 카메라 미리보기를 띄울 표면 홀더를 제거한다.
+                camera?.setPreviewDisplay(null)
+            }
+
+            override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int)
+            {}
+        })
+    }
 }
