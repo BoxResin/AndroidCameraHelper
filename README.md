@@ -4,23 +4,7 @@
 본 라이브러리는 `androidx` 패키지를 사용하는 프로젝트에서만 이용 가능합니다.
 
 ## 설치하기
-1. 프로젝트 루트의 `build.gradle` 을 다음처럼 편집합니다.
-
-```gradle
-buildscript {
-    ...
-}
-
-allprojects {
-    repositories {
-        ...
-        // 추가
-        maven { url = 'https://dl.bintray.com/boxresin/maven/' }
-    }
-}
-```
-
-2. `app` 모듈의 `build.gradle` 을 다음처럼 편집합니다.
+1. `app` 모듈의 `build.gradle` 을 다음처럼 편집합니다.
 
 ```gradle
 android {
@@ -30,12 +14,14 @@ android {
 dependencies {
     ...
     // 추가
-    implementation 'boxresin.android.camera:cameraview:0.1.1'
+    implementation 'boxresin.android.camera:cameraview:<버전>'
     ...
 }
 ```
 
-3. `AndroidManifest.xml`에 카메라 권한을 추가합니다.
+`<버전>`은 `x.x.x` 형식으로 변경해주세요. (현재 버전 [ ![Download](https://api.bintray.com/packages/boxresin/maven/boxresin.android.camera%3Acameraview/images/download.svg) ](https://bintray.com/boxresin/maven/boxresin.android.camera%3Acameraview/_latestVersion))
+
+2. `AndroidManifest.xml`에 카메라 권한을 추가합니다.
 ```xml
 <manifest ...>
     ...
